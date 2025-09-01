@@ -1,0 +1,7 @@
+bpm-public.key|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/bpm-public.key|b5d0ce51aa2142d2961651a3f561678a5679a17459ee4dca6b42c65a403100eb|0.1|660|"-----BEGIN PGP PUBLIC KEY BLOCK-----"
+bpm-public.key.1|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/bpm-public.key.1|b5d0ce51aa2142d2961651a3f561678a5679a17459ee4dca6b42c65a403100eb|0.1|660|"-----BEGIN PGP PUBLIC KEY BLOCK-----"
+calc|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/calc|688ccdb047ccd2739b0caa8c61a30689d3e0203aa2af63e34b4cb758eaca3e7d|0.1|299|"#!/usr/bin/env bash"
+dateinfo|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/dateinfo|b3a4947b5921503a3a635593d9d5636b74e1cced10e252a0cf10c169e3f6f2cf|0.1|79|"#!/usr/bin/env bash"
+hello|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/hello|2003174f3cd028e7f09926cec39a03a440740725d13954afafcf4451390ee041|0.1|52|"#!/usr/bin/env bash"
+index-gen.sh|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/index-gen.sh|b8022bfc1410b63d839f5dbb085a654873122919158920414c4bfc616477ec34|0.1|627|"#!/usr/bin/env bash"
+packages.idx.asc|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/packages.idx.asc|757075b22e0c5800195cf562fc49ce638bd30e12ef309f1603acd587f8b4b9d8|0.1|228|"-----BEGIN PGP SIGNATURE-----"
