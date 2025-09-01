@@ -1,0 +1,20 @@
+name: Generate index
+on:
+  push:
+    paths:
+      - '**'
+jobs:
+  gen-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate index
+        run: |
+          chmod +x ./index-gen.sh
+          ./index-gen.sh
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          git add packages.idx
+          git commit -m "Auto update packages.idx" || echo "no changes"
+          git push
+
