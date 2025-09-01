@@ -1,0 +1,36 @@
+name: Generate Package Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.sh'
+      - 'packages.idx'
+      - 'hello'
+      - 'calc'
+      - 'dateinfo'
+      - 'nvim'
+      - 'vim'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Make index-gen.sh executable
+        run: chmod +x ./index-gen.sh
+
+      - name: Generate the new package index
+        run: ./index-gen.sh
+
+      - name: Commit and push if index has changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add packages.idx
+          git diff --staged --quiet || git commit -m "Auto-generate: Update package index"
+          git push
