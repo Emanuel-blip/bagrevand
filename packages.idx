@@ -1,4 +1,0 @@
-calc|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/calc|688ccdb047ccd2739b0caa8c61a30689d3e0203aa2af63e34b4cb758eaca3e7d|0.1|299|"#!/usr/bin/env bash"
-dateinfo|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/dateinfo|b3a4947b5921503a3a635593d9d5636b74e1cced10e252a0cf10c169e3f6f2cf|0.1|79|"#!/usr/bin/env bash"
-hello|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/hello|2003174f3cd028e7f09926cec39a03a440740725d13954afafcf4451390ee041|0.1|52|"#!/usr/bin/env bash"
-index-gen.sh|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/index-gen.sh|fa9740685e66c09249964d54ec7334ec41e8d42443702188803b2478858b1012|0.1|482|"#!/usr/bin/env bash"
