@@ -1,7 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
+if [ $# -eq 2 ]; then
+  a="$1"
+  b="$2"
+else
+  read -r -p "Enter first number: " a
+  read -r -p "Enter second number: " b
+fi
 
-# Simple calculator script
-echo "Simple calculator:"
-read -p "Enter first number: " a
-read -p "Enter second number: " b
-echo "Sum = $((a+b))"
+if ! [[ "$a" =~ ^-?[0-9]+$ ]] || ! [[ "$b" =~ ^-?[0-9]+$ ]]; then
+  echo "Please enter integers or call: calc 3 4"
+  exit 1
+fi
+
+echo "Sum = $((a + b))"
+
