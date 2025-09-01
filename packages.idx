@@ -1,0 +1,5 @@
+calc|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/calc|71f89013850bc9713bb0dd73c5ceca36d4a4b666827f042737e3471d737475ca|0.1|155|"#!/bin/bash"
+dateinfo|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/dateinfo|c743e34ede5318669f0156c2e8e392f257ed9dd10a95c92f42684d69d8f43675|0.1|71|"#!/bin/bash"
+hello|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/hello|bd64c1864438d1063bb85c4ae4d0330e01bfa12ad6045b9d3b9f24ee1e5d9ee8|0.1|44|"#!/bin/bash"
+index-gen.sh|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/index-gen.sh|fd65e92eeeab6d7d857ef39c16b55c020de0e0eb73342d7322cb1dafe6c2f99d|0.1|398|"#!/usr/bin/env bash"
+packages.idx|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/packages.idx|20b40742e235fbc25ed28273dceb2f36ff46ea21418fd09ca2ff39aa9b7f2299|0.1|668|"calc|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/calc|71f89013850bc9713bb0dd73c5ceca36d4a4b666827f042737e3471d737475ca|0.1|155|\"#!/bin/bash\""
