@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Script to display today's date
+echo "Today is: $(date)"

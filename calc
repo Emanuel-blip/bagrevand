@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Simple calculator script
+echo "Simple calculator:"
+read -p "Enter first number: " a
+read -p "Enter second number: " b
+echo "Sum = $((a+b))"
