@@ -4,4 +4,4 @@ calc|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/calc|688ccdb0
 dateinfo|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/dateinfo|b3a4947b5921503a3a635593d9d5636b74e1cced10e252a0cf10c169e3f6f2cf|0.1|79|"#!/usr/bin/env bash"
 hello|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/hello|2003174f3cd028e7f09926cec39a03a440740725d13954afafcf4451390ee041|0.1|52|"#!/usr/bin/env bash"
 index-gen.sh|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/index-gen.sh|b8022bfc1410b63d839f5dbb085a654873122919158920414c4bfc616477ec34|0.1|627|"#!/usr/bin/env bash"
-packages.idx.asc|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/packages.idx.asc|757075b22e0c5800195cf562fc49ce638bd30e12ef309f1603acd587f8b4b9d8|0.1|228|"-----BEGIN PGP SIGNATURE-----"
+packages.idx.asc|https://raw.githubusercontent.com/Emanuel-blip/bagrevand/main/packages.idx.asc|5a38cff6066ff7d4777fbbf1ffc4b4ef82c22654810471926e19066e97e49584|0.1|228|"-----BEGIN PGP SIGNATURE-----"
