@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+show_help() {
+    echo "Bagrevand Package Manager (bpm) v$VERSION"
+    echo ""
+    echo "Usage: bpm <command> [options]"
+    echo ""
+    echo "Commands:"
+    echo "  install <package>      Install a package"
+    echo "  remove <package>       Remove an installed package"
+    echo "  list                   List installed packages"
+    echo "  search [term]          Search for packages (or list all if no term)"
+    echo "  info <package>         Show package information"
+    echo "  upgrade [package]      Upgrade package(s) to latest version"
+    echo "  update                 Update package index"
+    echo "  help                   Show this help message"
+    echo ""
+    echo "Examples:"
+    echo "  bpm install hello"
+    echo "  bpm remove hello"
+    echo "  bpm list"
+    echo "  bpm search calc"
+    echo "  bpm info hello"
+    echo "  bpm upgrade"
+    echo "  bpm upgrade hello"
+}

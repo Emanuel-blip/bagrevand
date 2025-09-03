@@ -1,59 +1,44 @@
+#!/usr/bin/env bash
 
-function install_package() {
+install_package() {
     local package_name="$1"
+    if [ -z "$package_name" ]; then
+        log_error "Package name is required"
+        return 1
+    fi
+
+    log_info "Installing $package_name..."
+
+    # Փորձում ենք ստանալ փաթեթի տվյալները
+    local package_info=$(get_package_info "$package_name")
+
+    if [ -z "$package_info" ]; then
+        log_error "Package '$package_name' not found in repository."
+        return 1
+    fi
     
-    # Ստուգել, թե արդյոք փաթեթն արդեն տեղադրված է
-    if [[ "$IS_GLOBAL" == "true" ]]; then
-        if [ -f "/usr/local/bin/$package_name" ]; then
-            echo "Package '$package_name' is already installed globally."
-            return 0
-        fi
-    else
-        if [ -f "$PACKAGES_DIR/$package_name" ]; then
-            echo "Package '$package_name' is already installed locally."
-            return 0
-        fi
+    local package_url=$(echo "$package_info" | cut -d'|' -f2)
+    local package_hash=$(echo "$package_info" | cut -d'|' -f3)
+    local package_version=$(echo "$package_info" | cut -d'|' -f4)
+
+    if [ -f "$PACKAGES_DIR/$package_name" ]; then
+        log_warning "Package '$package_name' is already installed"
+        return 0
     fi
-
-    local index=$(fetch_index)
-    local package_line=$(echo "$index" | grep "^$package_name|")
-
-    if [ -z "$package_line" ]; then
-        echo "Error: Package '$package_name' not found in index." >&2
+    
+    log_info "Downloading $package_name (version $package_version)..."
+    if wget -q -O "$PACKAGES_DIR/$package_name" "$package_url"; then
+        log_success "Downloaded $package_name"
+    else
+        log_error "Failed to download $package_name"
         return 1
     fi
-
-    local url=$(echo "$package_line" | cut -d'|' -f2)
-    local expected_sha=$(echo "$package_line" | cut -d'|' -f3)
-
-    local target_dir
-    local is_binary="false"
-    if [[ "$IS_GLOBAL" == "true" ]]; then
-        target_dir="/usr/local/bin"
-        is_binary="true"
-    else
-        target_dir="$PACKAGES_DIR"
-    fi
-
-    mkdir -p "$target_dir"
-    local tmp_file=$(mktemp)
-
-    wget -q -O "$tmp_file" "$url"
-
-    local actual_sha=$(sha256sum "$tmp_file" | awk '{print $1}')
-    if [ "$actual_sha" != "$expected_sha" ]; then
-        echo "Error: SHA256 mismatch for '$package_name'." >&2
-        rm "$tmp_file"
+    
+    if ! verify_package "$PACKAGES_DIR/$package_name" "$package_hash"; then
+        rm -f "$PACKAGES_DIR/$package_name"
         return 1
     fi
-
-    if [[ "$is_binary" == "true" ]]; then
-        mv "$tmp_file" "$target_dir/$package_name"
-    else
-        mv "$tmp_file" "$target_dir/$package_name"
-    fi
-
-    chmod +x "$target_dir/$package_name"
-    echo "Successfully installed '$package_name'."
-    return 0
+    
+    chmod +x "$PACKAGES_DIR/$package_name"
+    log_success "$package_name installed successfully!"
 }

@@ -1,23 +1,19 @@
-function remove_package() {
-    local package_name="$1"
+#!/usr/bin/env bash
+
+remove_package() {
+    local package_name="$@"  # Փոխել $1-ը $@-ով
     if [ -z "$package_name" ]; then
-        echo "Error: Please specify a package to remove." >&2
+        log_error "Package name is required"
         return 1
     fi
 
-    if [[ "$IS_GLOBAL" == "true" ]]; then
-        if [ ! -f "/usr/local/bin/$package_name" ]; then
-            echo "Error: Package '$package_name' is not installed globally." >&2
+    for pkg in "$@"; do
+        log_info "Removing $pkg..."
+        if [ ! -f "$PACKAGES_DIR/$pkg" ]; then
+            log_error "Package '$pkg' is not installed"
             return 1
         fi
-        sudo rm "/usr/local/bin/$package_name"
-    else
-        if [ ! -f "$PACKAGES_DIR/$package_name" ]; then
-            echo "Error: Package '$package_name' is not installed locally." >&2
-            return 1
-        fi
-        rm "$PACKAGES_DIR/$package_name"
-    fi
-    echo "Successfully removed '$package_name'."
-    return 0
+        rm -f "$PACKAGES_DIR/$pkg"
+        log_success "$pkg removed successfully!"
+    done
 }
